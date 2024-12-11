@@ -1,0 +1,32 @@
+{
+  "name": "@bytebeam/jslogs",
+  "version": "1.0.0",
+  "description": "A lightweight, POSIX-friendly logging library for Node.js, designed for flexibility and simplicity.",
+  "main": "jslogs.js",
+  "type":"module",
+  "scripts": {
+    "test": "node jslogs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ByteBeam-OSS/jslogs.git"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "logs",
+    "logging",
+    "pretty",
+    "json",
+    "posix"
+  ],
+  "author": "Sotirios Anagnostopoulos",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/ByteBeam-OSS/jslogs/issues"
+  },
+  "homepage": "https://github.com/ByteBeam-OSS/jslogs#readme",
+  "dependencies": {
+    "chalk": "^5.3.0"
+  }
+}
