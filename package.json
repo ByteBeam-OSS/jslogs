@@ -1,9 +1,9 @@
 {
   "name": "@bytebeam/jslogs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A lightweight, POSIX-friendly logging library for Node.js, designed for flexibility and simplicity.",
   "main": "jslogs.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "node jslogs.js"
   },
