@@ -1,4 +1,4 @@
-# @bbl/jslogger
+# @bytebeam/jslogger
 
 A simple and configurable logger for Node.js, allowing flexibility in output format and log destinations (console or file). Supports both icon-based and verbal status messages, with options for JSON output and more.
 
