@@ -1,4 +1,4 @@
-# @bytebeam/jslogger
+# @bytebeam/jslogs
 
 A simple and configurable logger for Node.js, allowing flexibility in output format and log destinations (console or file). Supports both icon-based and verbal status messages, with options for JSON output and more.
 
@@ -12,10 +12,10 @@ A simple and configurable logger for Node.js, allowing flexibility in output for
 
 ## Installation
 
-To install the `@bbl/jslogger` package, run the following command:
+To install the `@bytebeam/jslogs` package, run the following command:
 
 ```
-npm install @bbl/jslogger
+npm install @bytebeam/jslogs
 ```
 
 ## Usage
@@ -23,38 +23,32 @@ npm install @bbl/jslogger
 ### Basic Usage
 
 ```javascript
-import createLogger from '@bbl/jslogger';
+import createLogger from '@bytebeam/jslogs';
 
 // Create a logger instance
 const logger = await createLogger({
   jsonOutput: false,  // Set to true for JSON output
   file: './logs/output.log',  // Set to the desired file path to log to a file
-  writethrough: true,  // Log to both file and console
-  useVerbal: false,    // Set to true to use verbal status names instead of icons
+  writethrough: true, // Set to true to log to both console and file
 });
 
-// Log messages with different statuses
-logger.success('Operation completed successfully');
-logger.error('Something went wrong');
-logger.info('Information message');
-logger.warning('This is a warning');
-logger.waiting('Please wait...');
+// Example log messages
+logger.success('This is a success message');
+logger.error('This is an error message');
+logger.warning('This is a warning message');
+logger.info('This is an info message');
+logger.waiting('This is a waiting message');
+
+// Enable JSON output
+const jsonLogger = await createLogger({ jsonOutput: true });
+jsonLogger.success({ data: 'This is a JSON formatted success message' });
 ```
 
-### JSON Output Example
+### Options
 
-If `jsonOutput` is set to `true`, the logger will output logs as JSON, for example:
+You can customize the logger with the following options:
 
-```json
-{
-  "status": "success",
-  "message": "Operation completed successfully"
-}
-```
-
-## Options
-
-- `jsonOutput` (default: `false`): Set to `true` to enable JSON output.
-- `file` (default: `null`): Provide a file path to log to a file.
-- `writethrough` (default: `true`): Set to `true` to log both to the console and to the file.
-- `useVerbal` (default: `false`): Set to `true` to use verbal descriptions instead of icons (e.g., `"success"` instead of `"✔"`).
+- **jsonOutput**: (boolean) If true, logs will be formatted as JSON.
+- **file**: (string) Path to a file where logs will be written. If not provided, logs will only be printed to the console.
+- **writethrough**: (boolean) If true, logs will be printed to both the console and the file (if `file` is specified). If false, logs will only be written to the file.
+- **useVerbal**: (boolean) If true, logs will use verbal descriptions ("success", "error") instead of icons.
